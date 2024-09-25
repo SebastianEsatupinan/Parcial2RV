@@ -24,7 +24,7 @@ public class MoveObjectController : MonoBehaviour
     // Método que se activa cuando el jugador entra en el collider.
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player) // Verifica si el objeto que entró es el jugador.
+        if (other.CompareTag("Player")) // Verifica si el objeto que entró es el jugador.
         {
             playerEntered = true;
             OpenDoor(); // Llamamos a la función para abrir la puerta.
