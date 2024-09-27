@@ -7,8 +7,8 @@ public class FollowPlayer : MonoBehaviour
     public float stopDistance = 2f; // Distancia a mantener cuando el jugador se detiene
     public Vector3 offset = new Vector3(1f, 0f, 1f); // Offset diagonal
     public Transform[] referencePoints; // Puntos de referencia en la escena
-    public GameObject[] panels; // Paneles correspondientes a cada punto de referencia
-    public float panelActivationDistance = 3f; // Distancia para activar el panel
+    //public GameObject[] panels; // Paneles correspondientes a cada punto de referencia
+    //public float panelActivationDistance = 3f; // Distancia para activar el panel
 
     void Update()
     {
@@ -32,19 +32,19 @@ public class FollowPlayer : MonoBehaviour
         transform.LookAt(player);
 
         // Verificar la distancia a cada punto de referencia y activar el panel correspondiente
-        for (int i = 0; i < referencePoints.Length; i++)
-        {
-            float distanceToPoint = Vector3.Distance(transform.position, referencePoints[i].position);
+        //for (int i = 0; i < referencePoints.Length; i++)
+        //{
+        //    float distanceToPoint = Vector3.Distance(transform.position, referencePoints[i].position);
 
             // Si la distancia al punto es menor que la distancia de activación, activa el panel correspondiente
-            if (distanceToPoint < panelActivationDistance)
-            {
-                panels[i].SetActive(true); // Activar el panel correspondiente
-            }
-            else
-            {
-                panels[i].SetActive(false); // Desactivar el panel si está fuera de rango
-            }
-        }
+        //    if (distanceToPoint < panelActivationDistance)
+        //    {
+        //        panels[i].SetActive(true); // Activar el panel correspondiente
+        //    }
+        //    else
+        //    {
+        //        panels[i].SetActive(false); // Desactivar el panel si está fuera de rango
+        //    }
+        //}
     }
 }
