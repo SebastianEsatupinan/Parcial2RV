@@ -3,7 +3,12 @@ guid: 827ae5d8a71bd2945b3b9253e527f766
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - infoText: {instanceID: 0}
+  - buttonCanvas: {instanceID: 0}
+  - buttonPrefab: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - notificationSound: {fileID: 8300000, guid: 4cee9147963b49645be2e5922374182b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

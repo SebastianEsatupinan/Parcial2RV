@@ -9,6 +9,9 @@ public class InformationController : MonoBehaviour
     public TextMeshProUGUI infoText; // TMP donde se mostrará el mensaje
     public GameObject buttonCanvas; // El canvas donde aparecerán los botones
     public Button buttonPrefab; // Prefab del botón que instanciarás
+    public AudioSource audioSource; // Fuente de audio
+    public AudioClip notificationSound; // Sonido de notificación
+
     private Dictionary<string, string[]> placeOptions = new Dictionary<string, string[]>();
 
     private void Start()
@@ -52,6 +55,9 @@ public class InformationController : MonoBehaviour
 
     private void OnOptionSelected(string option)
     {
+        // Reproducir sonido de notificación al interactuar con un botón
+        PlayNotificationSound();
+
         switch (option)
         {
             case "¿Cuántos m2 tiene la sala?":
@@ -70,7 +76,7 @@ public class InformationController : MonoBehaviour
                 infoText.text = "La mesa del comedor es de Madera.";
                 break;
             case "De que tipo es la Cocina?":
-                infoText.text = "La cocina es Pegada al suelo con acabdo de Ceramica.";
+                infoText.text = "La cocina es Pegada al suelo con acabado de Cerámica.";
                 break;
             case "¿De qué tamaño es la cama?":
                 infoText.text = "La cama es de tamaño queen.";
@@ -88,7 +94,7 @@ public class InformationController : MonoBehaviour
                 infoText.text = "El baño tiene 1 lavamanos.";
                 break;
             case "¿De qué color son las baldosas?":
-                infoText.text = "Las baldosas son de color blanco y Negro estilo tabla de Ajedres.";
+                infoText.text = "Las baldosas son de color blanco y negro estilo tabla de ajedrez.";
                 break;
             case "Bienvenido":
                 infoText.text = "Bienvenido a la casa.";
@@ -97,6 +103,14 @@ public class InformationController : MonoBehaviour
             default:
                 infoText.text = "Opción no reconocida.";
                 break;
+        }
+    }
+
+    private void PlayNotificationSound()
+    {
+        if (audioSource != null && notificationSound != null)
+        {
+            audioSource.PlayOneShot(notificationSound); // Reproducir el sonido una vez
         }
     }
 
